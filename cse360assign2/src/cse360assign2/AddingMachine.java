@@ -17,6 +17,7 @@ package cse360assign2;
 public class AddingMachine {
 
 	private int total;
+	private String transactions;
 	
 	/**
 	 * AddingMachine() is the public default constructor for the 
@@ -25,6 +26,7 @@ public class AddingMachine {
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		transactions = "0";
 	}
 	
 	/**
@@ -34,41 +36,45 @@ public class AddingMachine {
 	 * object used to call this method is returned
 	 */
 	public int getTotal () {
-		return 0;
+		return this.total;
 	}
 	
 	/**
 	 * add() is a public method that takes an int
 	 * to add to the total and has no return value.
+	 * It also updates the data member
+	 * transactions with the value added.
 	 * @param value is an int that is added
 	 * to the data member total of the AddingMachine
 	 * object used to call this method
 	 */
 	public void add (int value) {
-		
+		this.transactions += " + " + value;
+		this.total += value;
 	}
 	
 	/**
 	 * subtract() is a public method that takes
 	 * an int to subtract from the total and has
-	 * no return valye. 
+	 * no return value. It also updates the data member
+	 * transactions with the value subtracted.
 	 * @param value is an int that is subtracted
 	 * from the data member total of the AddingMachine
 	 * object used to call this method
 	 */
 	public void subtract (int value) {
-		
+		this.transactions += " - " + value;
+		this.total -= value;
 	}
 		
 	/**
 	 * toString() is a public method that overrides
 	 * the Object class's toString method to return a 
-	 * String of the data member total of the AddingMachine
-	 * object that is used to call this method. This will
-	 * be called when an object is printed.
+	 * String of all transactions to the data member total. 
+	 * This will be called when an object is printed.
 	 */
 	public String toString () {
-		return "";
+		return this.transactions;
 	}
 
 	/**
