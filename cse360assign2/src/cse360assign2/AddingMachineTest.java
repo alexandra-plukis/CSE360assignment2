@@ -74,5 +74,32 @@ class AddingMachineTest {
 		assertEquals("toString() in Error.",
 				true, result);
 	}
+	
+	@Test
+	void clearTotal() {
+		AddingMachine machine = new AddingMachine();
+		machine.subtract(30);
+		machine.add(5);
+		machine.add(10);
+		machine.subtract(-40);
+		machine.subtract(15);
+		machine.clear();
+		assertEquals("Multiple computations in error.",
+				0, machine.getTotal());
+	}
+	
+	@Test
+	void clearPrint() {
+		AddingMachine machine = new AddingMachine();
+		machine.subtract(30);
+		machine.add(5);
+		machine.add(10);
+		machine.subtract(-40);
+		machine.subtract(15);
+		machine.clear();
+		boolean result = machine.toString().equals("0");
+		assertEquals("clear() in Error.",
+				true, result);
+	}
 
 }

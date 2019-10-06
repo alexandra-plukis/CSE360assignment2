@@ -79,10 +79,12 @@ public class AddingMachine {
 
 	/**
 	 * clear() is a public method that is used to 
-	 * reset the data member total back to 0.
+	 * reset the data member total back to 0, and
+	 * restart the transactions string to "0".
 	 */
 	public void clear() {
-	
+		total = 0; 
+		transactions = "0";
 	}
 }
 
