@@ -13,6 +13,7 @@ class AddingMachineTest {
 		assertNotNull(machine);
 	}
 	
+	@Test
 	void getTotal() {
 		AddingMachine machine = new AddingMachine();
 		assertEquals("get total does not return the actual total.",
@@ -27,11 +28,12 @@ class AddingMachineTest {
 				100, machine.getTotal());
 	}
 	
+	@Test
 	void addNegative() {
 		AddingMachine machine = new AddingMachine();
-		machine.add(100);
+		machine.add(-100);
 		assertEquals("Addition of negative integer doesn't work.",
-				-76, machine.getTotal());
+				-100, machine.getTotal());
 	}
 	
 	@Test
